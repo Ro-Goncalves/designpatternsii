@@ -138,3 +138,5 @@ public class TestesAdapter {
 ## Proxy
 
 ## Referências
+
+[REFACTORING GURU - ADAPTER](https://refactoring.guru/design-patterns/adapter)
