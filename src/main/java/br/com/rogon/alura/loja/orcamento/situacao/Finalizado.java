@@ -12,4 +12,9 @@ public class Finalizado extends SituacaoOrcamento {
 		throw new DomainException("Orcamento finalizado nao pode ter desconto extra!");
 	}
 
+	@Override
+	public String toString() {
+		return "Finalizado";
+	}
+
 }
