@@ -1,4 +1,4 @@
-package br.com.rogon.refactoringguru.adapter.square;
+package br.com.rogon.refactoringguru.adapter;
 
 /**
  * Pinos Quadrados (SquarePegs) não são compatíveis com Buracos Redondos (RoundHoles)

@@ -1,4 +1,4 @@
-package br.com.rogon.refactoringguru.adapter.round;
+package br.com.rogon.refactoringguru.adapter;
 
 /*
  * Buracos Redondos (RoundHole) são compatíveis com Pinos Redondos (RoundPegs)

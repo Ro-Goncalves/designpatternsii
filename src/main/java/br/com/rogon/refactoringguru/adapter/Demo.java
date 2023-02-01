@@ -1,9 +1,5 @@
 package br.com.rogon.refactoringguru.adapter;
 
-import br.com.rogon.refactoringguru.adapter.adapters.SquarePegAdapter;
-import br.com.rogon.refactoringguru.adapter.round.RoundHole;
-import br.com.rogon.refactoringguru.adapter.round.RoundPeg;
-import br.com.rogon.refactoringguru.adapter.square.SquarePeg;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

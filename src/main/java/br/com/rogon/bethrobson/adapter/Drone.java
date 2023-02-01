@@ -1,4 +1,4 @@
-package br.com.rogon.bethrobson.adapter.ducks;
+package br.com.rogon.bethrobson.adapter;
 
 public interface Drone {
     void beep();

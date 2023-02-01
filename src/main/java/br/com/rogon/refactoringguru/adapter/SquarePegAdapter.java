@@ -1,7 +1,4 @@
-package br.com.rogon.refactoringguru.adapter.adapters;
-
-import br.com.rogon.refactoringguru.adapter.round.RoundPeg;
-import br.com.rogon.refactoringguru.adapter.square.SquarePeg;
+package br.com.rogon.refactoringguru.adapter;
 
 public class SquarePegAdapter extends RoundPeg{
     private SquarePeg peg;
