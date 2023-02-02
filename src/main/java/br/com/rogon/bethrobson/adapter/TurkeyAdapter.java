@@ -1,4 +1,4 @@
-package br.com.rogon.bethrobson.adapter.ducks;
+package br.com.rogon.bethrobson.adapter;
 
 public class TurkeyAdapter implements Duck {
     Turkey turkey;
@@ -9,7 +9,7 @@ public class TurkeyAdapter implements Duck {
 
     @Override
     public void quack() {
-        turkey.gobble();        
+        turkey.gobble();     
     }
 
     @Override

@@ -1,4 +1,4 @@
-package br.com.rogon.bethrobson.adapter.ducks;
+package br.com.rogon.bethrobson.adapter;
 
 import lombok.extern.slf4j.Slf4j;
 

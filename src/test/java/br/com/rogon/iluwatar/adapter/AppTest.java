@@ -14,7 +14,7 @@ public class AppTest {
      */
 
      @Test
-     void shouldExecuteApplicationWithoutException(){
+     void deveriaExecutarAplicacaoSemExcecao(){
         assertDoesNotThrow(() -> App.main(new String[]{}));
      }
     
