@@ -9,8 +9,6 @@ import java.util.Map;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.verification.NoMoreInteractions;
-
 /*
  * Essa adaptador transforma um Duck em Turkey
  */
