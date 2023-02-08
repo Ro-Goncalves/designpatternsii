@@ -55,6 +55,27 @@
   </dependencies>
 
   <build>
+	<plugins>
+		<plugin>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>build-helper-maven-plugin</artifactId>
+			<version>3.3.0</version>		      
+			<executions>
+				<execution>
+					<id>add-source</id>
+					<phase>generate-sources</phase>
+					<goals>
+						<goal>add-source</goal>
+					</goals>
+					<configuration>
+						<sources>
+							<sources>src/out</sources>
+						</sources>					
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
+	</plugins>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
@@ -95,13 +116,38 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
-        </plugin>
+        </plugin>		
       </plugins>      
     </pluginManagement>
-    <plugin>
+    
+		<!--
+			<plugin>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>build-helper-maven-plugin</artifactId>
+			<version>3.3.0</version>
+		</plugin>
+		<plugin>
         <groupId>com.mycila</groupId>
         <artifactId>license-maven-plugin</artifactId>
         <version>4.1</version>
+		<executions>
+			<execution>
+				<id>add-resource</id>
+				<phase>generate-resources</phase>
+				<goals>
+					<goal>add-resource</goal>
+				</goals>
+				<configuration>
+				<resources>
+					<resource>
+						<directory>src/out</directory> 
+						<targetPath>out</targetPath>
+					</resource>
+				</resources>
+			</configuration>
+			</execution>
+		</executions>
+		</plugin>
         <configuration>
           <licenseSets>
             <licenseSet>
@@ -128,9 +174,11 @@
             <phase>install</phase>
             <goals>
               <goal>format</goal>
-            </goals>
-          </execution>
+            </goals>			
+          </execution>		  
+          
         </executions>
-      </plugin>
+		-->
+      
   </build>
 </project>
