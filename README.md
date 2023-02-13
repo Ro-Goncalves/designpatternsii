@@ -131,6 +131,22 @@ public class TestesAdapter {
 
 ## Decorator
 
+Esse é um tanto quanto difícil de intender, e um outro tando para identificar onde usar. Vamos ver se tudo fica mais claro.
+
+Esse é um padrão estrutural que permite o acoplamento de novos comportamentos a um objeto, o colocando dentro de um invólucro. Até que vendo assim parece ser simples, é tipo uma camisinha, ou um drink de café, temos o café base e podemos ir adicionando coisas nele, com isso teremos vários tipos de café.
+
+Temos que ter algo em nossa cabeça: **extender uma classe é ruim**. No exemplo a cima, temos a classe **Cafe**, quantas outras poderiam existir para os drinks? Uma **CafeLeite**, outra **CafeChocolate**, outra **CafeLeiteChocolate**, e sabe lá Deus mais o que. Temos que pensar em *Composição*, com isso nossa classe delegará algumas coisas a outra. Veja, **I**, do SOLID, ele diz para dependermos de interfaçe, se nossa classe tiver uma referência a um interface, **DrinksCafe**, poderemos alterar o tipo de drink na classe **Cafe** simplesmente alterando a referência. Ficará mais claro, acredite.
+
+Os *wrapper*, classes que serão decoradoras, ele é o papel de bala da classe, o embrulho. Ela tem os mesmos métodos do alvo, e pode fazer algo antes ou depois do método, o resto ela delega. Com isso conseguimos alterar o comportamento da classe; antes de entregar o café ao cliente, coloque leite.
+
+Esse padrão funciona como uma plilha, vamos colanddo vários papeis de bala, um em cima do outro. Para mim: **Decorator** é uma pilha de **Strategy**.
+
+Ainda está confuso, eu sei, vai piorar, pode relaxar. Vamos tentar mexer o bolo e ver se deixamos a massa mais homogênea. Teremos que ter uma interfaça **Component**, lembre-se do **I**, ela será o contrato entre os papeis de bala e a bala. O **Concret Component**, é a classe já existente, a bala. Uma outra classe, algo entre a bala e o papel, é a **Base Decorator**, ela tem um campo que referência a interface, com isso ela pode conter os componentes concretos e os decoradores, ela delega todas as operações para o objeto envolvido. E o papel, **Concrete Decorators**, eles sobrescrevem os métodos do **Base Decorator**, adicionando comportamentos antes ou depois. O **Client** pode envolver o compomente com multiplas camadas de decoradores.
+
+>Pilha de Strategy.
+
+
+
 ## Composite
 
 ## Facede

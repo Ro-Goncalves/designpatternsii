@@ -62,16 +62,19 @@
 			<version>3.3.0</version>		      
 			<executions>
 				<execution>
-					<id>add-source</id>
-					<phase>generate-sources</phase>
+					<id>add-resource</id>
+					<phase>generate-resources</phase>
 					<goals>
-						<goal>add-source</goal>
+						<goal>add-resource</goal>
 					</goals>
 					<configuration>
-						<sources>
-							<sources>src/out</sources>
-						</sources>					
-					</configuration>
+					<resources>
+						<resource>
+							<directory>src/out</directory> 
+							<targetPath>out</targetPath>
+						</resource>
+					</resources>					
+				</configuration>
 				</execution>
 			</executions>
 		</plugin>

@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 public class Demo {
     public static void main(String[] args) {
         String salaryRecords = "Name,Salary\nJohn Smith,100000\nSteven Jobs,912000";
-        String output = Demo.class.getResource("/").getPath() + "OutputDemo.txt";
+        String output = Demo.class.getResource("/").getPath() + "out/OutputDemo.txt";
         
         DataSourceDecorator encoded = new CompressionDecorator(
             new EncryptionDecorator(
