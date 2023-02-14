@@ -1,17 +1,18 @@
 package br.com.rogon.alura.loja.pedido;
 
 import java.math.BigDecimal;
+import java.util.List;
+
+import br.com.rogon.alura.loja.orcamento.ItemOrcamento;
 
 public class GeraPedido {
 
 	private String cliente;
-	private BigDecimal valorOrcamento;
-	private int quantidadeItens;
+	private List<ItemOrcamento> itens;
 
-	public GeraPedido(String cliente, BigDecimal valorOrcamento, int quantidadeItens) {
+	public GeraPedido(String cliente, List<ItemOrcamento> itens) {
 		this.cliente = cliente;
-		this.valorOrcamento = valorOrcamento;
-		this.quantidadeItens = quantidadeItens;
+		this.itens = itens;
 	}
 
 	public String getCliente() {
@@ -19,11 +20,18 @@ public class GeraPedido {
 	}
 
 	public BigDecimal getValorOrcamento() {
-		return valorOrcamento;
+		return itens.stream()
+		            .map(item -> item.getValor())
+					.reduce((a, b) -> a.add(b))
+					.get();
 	}
 
 	public int getQuantidadeItens() {
-		return quantidadeItens;
+		return itens.size();
+	}
+
+	public List<ItemOrcamento> getItens() {
+		return itens;
 	}
 
 }

@@ -145,8 +145,6 @@ Ainda está confuso, eu sei, vai piorar, pode relaxar. Vamos tentar mexer o bolo
 
 >Pilha de Strategy.
 
-
-
 ## Composite
 
 ## Facede

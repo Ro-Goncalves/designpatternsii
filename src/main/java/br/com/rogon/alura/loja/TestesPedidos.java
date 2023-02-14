@@ -2,7 +2,9 @@ package br.com.rogon.alura.loja;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.List;
 
+import br.com.rogon.alura.loja.orcamento.ItemOrcamento;
 import br.com.rogon.alura.loja.pedido.GeraPedido;
 import br.com.rogon.alura.loja.pedido.GeraPedidoHandler;
 import br.com.rogon.alura.loja.pedido.acoes.CriarPedidoNoBanco;
@@ -12,10 +14,14 @@ public class TestesPedidos {
 
 	public static void main(String[] args) {
 		String cliente = "Ana da Silva";
-		BigDecimal valorOrcamento = new BigDecimal("745.99");
-		int quantidadeItens = 3;
+		List<ItemOrcamento> itens = List.of(
+			new ItemOrcamento(new BigDecimal("745.99")),
+			new ItemOrcamento(new BigDecimal("745.99")),
+			new ItemOrcamento(new BigDecimal("745.99"))
+		);
 		
-		GeraPedido gerador = new GeraPedido(cliente, valorOrcamento, quantidadeItens);
+		
+		GeraPedido gerador = new GeraPedido(cliente, itens);
 		GeraPedidoHandler handler = new GeraPedidoHandler(Arrays.asList(
 				new EnviarPedidoPorEmail(),
 				new CriarPedidoNoBanco()));

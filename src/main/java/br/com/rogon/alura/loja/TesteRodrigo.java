@@ -1,28 +1,25 @@
 package br.com.rogon.alura.loja;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.Calendar;
+import java.util.List;
+import java.util.Optional;
+
+import br.com.rogon.alura.loja.orcamento.ItemOrcamento;
 
 public class TesteRodrigo {
     public static void main(String[] args) {
-        Calendar dataAtual = Calendar.getInstance();
-        Calendar dataAlvo = DateToCalendar(Date.valueOf("2023-02-10")); 
+        List<ItemOrcamento> itens = List.of(
+            new ItemOrcamento(BigDecimal.TEN),
+            new ItemOrcamento(BigDecimal.ONE),
+            new ItemOrcamento(BigDecimal.TEN)
+        );
 
-        dataAtual.set(Calendar.HOUR, 0);
-        dataAtual.set(Calendar.MINUTE,0);
-        dataAtual.set(Calendar.SECOND,0);
-        dataAtual.set(Calendar.MILLISECOND,0);
+        Optional<BigDecimal> valor = itens.stream()
+             .map(item -> item.getValor())
+             .reduce((a, b) -> a.add(b));
 
-
-        System.out.println(dataAtual.toInstant());
-        System.out.println(dataAlvo.toInstant());
-
-        System.out.println(dataAlvo.compareTo(dataAtual));
+        System.out.println(valor.get());
     }
-
-    private static Calendar DateToCalendar(Date date){		
-		Calendar cal = Calendar.getInstance();
-        cal.setTime(date);	
-		return cal;
-	}
 }
