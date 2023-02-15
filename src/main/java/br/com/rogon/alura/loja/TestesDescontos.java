@@ -1,7 +1,6 @@
 package br.com.rogon.alura.loja;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 import br.com.rogon.alura.loja.desconto.CalculadoraDeDescontos;
