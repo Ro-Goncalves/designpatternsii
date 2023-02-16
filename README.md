@@ -169,4 +169,20 @@ Agora viria a parte que demonstro algum código ou coisa assim, não. Veja os ex
 
 ## Referências
 
-[REFACTORING GURU - ADAPTER](https://refactoring.guru/design-patterns/adapter)
+[REFACTORING GURU - ADAPTER](https://refactoring.guru/pt-br/design-patterns/adapter)
+
+[BETHROBSON - ADAPTER](https://github.com/bethrobson/Head-First-Design-Patterns/tree/master/src/headfirst/designpatterns/adapter)
+
+[ILUWATAR - ADAPTER](https://github.com/iluwatar/java-design-patterns/tree/master/adapter)
+
+[REFACTORING GURU - COMPOSITE](https://refactoring.guru/pt-br/design-patterns/composite)
+
+[BETHROBSON - COMPOSITE](https://github.com/bethrobson/Head-First-Design-Patterns/tree/master/src/headfirst/designpatterns/composite)
+
+[ILUWATAR - COMPOSITE](https://github.com/iluwatar/java-design-patterns/tree/master/composite)
+
+[REFACTORING GURU - FACADE](https://refactoring.guru/pt-br/design-patterns/facade)
+
+[BETHROBSON - FACADE](https://github.com/bethrobson/Head-First-Design-Patterns/tree/master/src/headfirst/designpatterns/facade/hometheater)
+
+[ILUWATAR - FACADE](https://github.com/iluwatar/java-design-patterns/tree/master/facade)
