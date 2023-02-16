@@ -147,6 +147,22 @@ Ainda está confuso, eu sei, vai piorar, pode relaxar. Vamos tentar mexer o bolo
 
 ## Composite
 
+Esse deu um certo trabalho em entender, foi necessário alguns dias, e banhos, pensando sobre o assunto. Cheguei a seguinte conclusão: **Composite** é utilizado para criar objetos complexos. Começamos com o esqueleto desse objeto, uma **Interface** ou **Abstract Class**, implementamos a parte mais abstrata desse objeto, ela implementas alguns dos métodos, e vamos subindo o nível de abstração até termos o objeto concreto. Da para ver isso muito fácil no exemplo do [Refactoring Guru - Composite](https://refactoring.guru/pt-br/design-patterns/composite/java/example), que foi replicado nesse diretório. Os outros dois exemplos são de objetos do nosso dia a dia, irá ajudar um certo tanto.
+
+Agora vamos a uma definição um pouco mais formal, sair da minha cabeça e ir á literatura.
+
+> O **Composite** permite compor objetos em uma estrutura de árvore, fazendo com que essa estrutura trabalhe como um único objeto.
+
+Como dito, esse padrão vem nós ajudar com estruturas que se assemelham com árvores. Não sei se meu exemplo será muito bom, mas vamos lá. Imagina a ordem vinda do auto escalão do **Exércido Melância**, até que ela chegue ao baixo escalão, ela passa por várias pessoas, de várias *patentes*, o adjetivo. E pode seguir por caminhos diferente dependendo da mensagem. Conseguiu imaginar uma árvore? Pode imaginar um pé de melância, onde a mensagem saí da maior á menor, o caminho a seguir seria os *ramos*, até chegar a outra, e a outra melância. E pode até ter uma mensagem dentro da outra. Para um exemplo menos pornográfico leia as referências.
+
+Imaginemos que essa mensagem será transportado pela saiva, ou malas com dinheiro, não não, seiva. Cada *pulso de seiva* pode transportar algumas mensagens, ou outro *pulso de seiva* com mensagens, ou mensagens e *pulso de seiva* com outras mensagens, é complicado. Uma mala pode contér dinheiro, uma outra mala com dinheiro dentro ou dinheiro e outra mala com dinheiro, às vezes esse dinheiro vai até à cueca, acontece. Esse padrão sugere que exista um intermediador entre a mensagem e o subordinado, **SEIVA**. Dessa forma quando perguntamos a mensagem qual o seu contéudo ela responde com a frase, quando perguntamos ao *puslo de seiva* ele pergunta para cada mensagem qual seu texto e os retorna, de dentro desse *pulso* existirem outros *pulsos* ele pergunta para o *pulso* que pergunta á mensagem. E assim vai.
+
+Tudo muito complicado, muito dinheiro andando em malas por aí. O pulo do gato é que não precisamos nós preocupar com isso, ao usar esse padrão conversaremos com os objetos atráves da **Interface**, a resposta virá sem sabermos ao certo o que tem no objeto.
+
+Para implementar essa parada toda devemos seguir um modelo. **Component** será a interface que conterá as operações comuns entre elementos simples e complexos da árvore. **Leaf** o elemento mais básico, o fim, faz o trabalho duro, pois não tem mais a quem delegá-lo, a ***mensagem***. **Composite**, pode conter a **Leaf** ou outro **Composite**, ele não sabe quem são seus filhos, trabalho com eles a partir da **Component**, ele delega o trabalho ao seu filho. O **Client** trabalho com os elementos à partir da interface, sem se importar se são objetos simples ou complexos.
+
+Agora viria a parte que demonstro algum código ou coisa assim, não. Veja os exemplos e o que foi feito na aula da Alura, reflita sobre o que leu e viu. faça os exemplo e chegue às suas conclusões.
+
 ## Facede
 
 ## Proxy
