@@ -15,7 +15,7 @@ Do mais, rogemos à Deus para que ilumine nosssa inteligência, assim poderemos 
 - [Adapter](#adapter)
 - [Decorator](#decorator)
 - [Composite](#composite)
-- [Facede](#facede)
+- [Facade](#facade)
 - [Proxy](#proxy)
 - [Referências](#referências)
 
@@ -163,7 +163,7 @@ Para implementar essa parada toda devemos seguir um modelo. **Component** será 
 
 Agora viria a parte que demonstro algum código ou coisa assim, não. Veja os exemplos e o que foi feito na aula da Alura, reflita sobre o que leu e viu. faça os exemplo e chegue às suas conclusões.
 
-## Facede
+## Facade
 
 ## Proxy
 

@@ -18,6 +18,11 @@ public class InMemoryAppender extends AppenderBase<ILoggingEvent>{
         start();
     }
 
+    public InMemoryAppender(){
+        ((Logger) LoggerFactory.getLogger("root")).addAppender(this);
+        start();
+    }
+
     @Override
     protected void append(ILoggingEvent eventObject) {
         log.add(eventObject);
@@ -29,5 +34,11 @@ public class InMemoryAppender extends AppenderBase<ILoggingEvent>{
 
     public Integer getLogSize(){
         return log.size();
+    }
+
+    public boolean logContains(String message){
+        return log.stream()
+                  .map(ILoggingEvent::getFormattedMessage)
+                  .anyMatch(message::equals);
     }
 }
