@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import br.com.rogon.alura.loja.orcamento.ItemOrcamento;
 import br.com.rogon.alura.loja.orcamento.Orcamento;
+import br.com.rogon.alura.loja.orcamento.OrcamentoProxy;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -17,6 +18,10 @@ public class TestesComposicao {
         novo.adicionarItem(new ItemOrcamento(new BigDecimal("500")));
         novo.adicionarItem(antigo);
 
-        log.info("Valor novo orcamento: " + novo.getValor());
+        OrcamentoProxy orcamentoProxy = new OrcamentoProxy(novo);
+
+        log.info("Valor novo orcamento: " + orcamentoProxy.getValor());
+        log.info("Valor novo orcamento: " + orcamentoProxy.getValor());
+
     }
 }

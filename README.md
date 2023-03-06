@@ -165,6 +165,12 @@ Agora viria a parte que demonstro algum código ou coisa assim, não. Veja os ex
 
 ## Facade
 
+E agora o **Facade**; bem, ele é um tanto quanto simples; em poucas palavras: quando a execução de alguma rotina é muito complexa, envolvendo várias classes e bibliotecas, podemos criar uma classe que fará todo esse meio de campo, assim nosso cliente só precisa utilizá-la.
+
+Imagina só, toda vez que você for utilizar um framework ter que iniciar todos os objetos, parametrizá-los, chamá-los na ordem certa, e por ai vai. Não é legal ter esse tipo de código na camada de négocio. Imagina ter que replicar isso algumas vezes, agora imagina ter que dar manutenção.
+
+É aí que entra a classe **Facade**, ela faz tudo isso para nós, fazendo com que a classe cliente tenha que instância-la passando pouco parâmetros.
+
 ## Proxy
 
 ## Referências
