@@ -1,5 +1,8 @@
 package br.com.rogon.bethrobson.proxy;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class GumballMachine {
     private State soldOutState;
     private State noQuarterState;
@@ -13,45 +16,93 @@ public class GumballMachine {
 
     public GumballMachine(String location, int count){
         soldOutState = new SoldOutState(this);
-        noQuarterState = new 
+        noQuarterState = new NoQuarterState(this);
+        haQuarterState = new HasQuarterState(this);
+        soldState = new SoldState(this);
+        winnerState = new WinnerState(this);
+
+        this.count = count;
+        if(count > 0){
+            state = noQuarterState;
+        }
+        this.location = location;
+    }
+
+    public void insertQuarter(){
+        state.insertQuarter();
+    }
+
+    public void ejectQuarter(){
+        state.ejectQuarter();
+    }
+
+    public void turnCrank(){
+        state.turnCrank();
+        state.dispense();
+    }
+
+    public void setState(State state) {
+        this.state = state;
     }
 
     public void releaseBall() {
+        log.info("A Gumball comes rolling out the slot...");
+        if(count != 0){
+            count -= 1;
+        }
     }
 
     public int getCount() {
-        return 0;
+        return count;
     }
 
-    public Object getSoldOutState() {
-        return null;
+    public void refill(int count){
+        this.count = count;
+        state = noQuarterState;
     }
 
-    public void setState(Object soldOutState) {
+    public State getState() {
+        return state;
     }
 
-    public Object getNoQuarterState() {
-        return null;
+    public String getLocation() {
+        return location;
     }
 
-    public Object getLocation() {
-        return null;
+    public State getSoldOutState() {
+        return soldOutState;
     }
 
-    public Object getState() {
-        return null;
+    public State getNoQuarterState() {
+        return noQuarterState;
     }
 
-    public Object getWinnerState() {
-        return null;
+    public State getHasQuarterState() {
+        return haQuarterState;
     }
 
-    public Object getSoldState() {
-        return null;
+    public State getSoldState() {
+        return soldState;
+    }    
+
+    public State getWinnerState() {
+        return winnerState;
     }
 
-    public Object getHasQuarterState() {
-        return null;
+    @Override
+    public String toString() {
+        StringBuffer result = new StringBuffer();
+        result.append("\nMighty Gumball, Inc.");
+        result.append("\njava-enable Standing Gumball Model #2023");
+        result.append("\nInventory: " + count + " Gumball");
+        if(count != 1){
+            result.append("s");
+        }
+        result.append("\n");
+        result.append("Machine is " + state + "\n");
+        return result.toString();
     }
+
+    
 
 }
