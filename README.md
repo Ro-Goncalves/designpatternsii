@@ -173,6 +173,12 @@ Imagina só, toda vez que você for utilizar um framework ter que iniciar todos 
 
 ## Proxy
 
+E chegamos ao fim, cançados, claro, muita coisa foi vista nesse tempo, um dia ei de melhorar o que foi escrito aqui. **Proxy** é um padrão muito interessante, e possibilida muitas coisas, muitas mesmo. Ele fica no meio do objeto e o cliente, podendo executar rotinas antes ou depois das chamadas aos métodos. Isso pode ser muito bem aplicado quando trabalhamos com sistemas legados e precisamos expandi-los, ou com bibliotecas de terceiros.
+
+Para fazermos isso precisamos criar o **Proxy** utilizando a mesma interface do objeto original, o **Proxy** delegará as chamadas ao objeto origial, e se necessário fará os tratamentos que não existiam antes, essa nova lógica pode acontecer antes ou depois da chamada.
+
+Estruturalmente ele parece bem simples, temos nossa interface **ServiceInterface** ela é utilizada pela **Service**, seriá a biblioteca de terceiros ou classe dum sistema legado, e o **Proxy**, o cara que atualizará a **Service** para o novo cenário. Nosso cliente só precisa alterar a criação da classe de **Service** para **Proxy**, uma vez que as duas implementam a mesma interface, ou possuem os mesmos métodos e assinaturas da **Service**.
+
 ## Referências
 
 [REFACTORING GURU - ADAPTER](https://refactoring.guru/pt-br/design-patterns/adapter)
